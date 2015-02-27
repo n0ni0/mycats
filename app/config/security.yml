@@ -1,12 +1,15 @@
 security:
-    providers:
-        in_memory:
-            memory: ~
-
     firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
-            security: false
+      frontend:
+        pattern:     ^/*
+        form_login:  ~
 
-        default:
-            anonymous: ~
+    access_control:
+      - { path ^/*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+
+    providers:
+      users:
+        entity: { class: AppBundle\Entity\User, property: email }
+
+    encoders:
+      AppBundle\Entity\User: { algorithm: sha512, iterations: 10 }

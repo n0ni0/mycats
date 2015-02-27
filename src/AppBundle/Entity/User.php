@@ -64,13 +64,6 @@ class User
     private $country;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="city", type="string", length=255)
-     */
-    private $city;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="start_date", type="datetime")
@@ -224,29 +217,6 @@ class User
     public function getCountry()
     {
         return $this->country;
-    }
-
-    /**
-     * Set city
-     *
-     * @param string $city
-     * @return User
-     */
-    public function setCity($city)
-    {
-        $this->city = $city;
-
-        return $this;
-    }
-
-    /**
-     * Get city
-     *
-     * @return string 
-     */
-    public function getCity()
-    {
-        return $this->city;
     }
 
     /**
