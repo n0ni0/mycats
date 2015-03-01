@@ -4,15 +4,21 @@ namespace AppBundle\DataFixtures\ORM;
 
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use AppBundle\Entity\User;
 
-class Users extends AbstractFixture implements ContainerAwareInterface
+class Users extends AbstractFixture implements ContainerAwareInterface, OrderedFixtureInterface
 {
 
   private $container;
+
+  public function getOrder()
+  {
+    return 10;
+  }
 
   public function setContainer(ContainerInterface $container = null)
   {

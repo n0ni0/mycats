@@ -1,3 +1,7 @@
 info:
   path:     site/{page}/
   defaults: { _controller: AppBundle:Site:static }
+
+home:
+  path:     /
+  defaults: { _controller: AppBlundle:Default:home }

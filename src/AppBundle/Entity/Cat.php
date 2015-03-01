@@ -22,8 +22,6 @@ class Cat
     private $id;
 
     /**
-     * @var string
-     *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
      */
     private $user;
@@ -36,9 +34,7 @@ class Cat
     private $name;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="breed", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Breed")
      */
     private $breed;
 
@@ -88,7 +84,11 @@ class Cat
         return $this->id;
     }
 
-
+    /**
+     * Set user
+     *
+     * @param AppBundle\Entity\User $user
+     */
     public function setUser(\AppBundle\Entity\User $user)
     {
         $this->user = $user;
@@ -132,10 +132,9 @@ class Cat
     /**
      * Set breed
      *
-     * @param string $breed
-     * @return Cat
+     * @param AppBundle\Entity\Breed\ $breed
      */
-    public function setBreed($breed)
+    public function setBreed(\AppBundle\Entity\Breed $breed)
     {
         $this->breed = $breed;
 

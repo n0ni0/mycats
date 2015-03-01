@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function infoAction()
+    public function homeAction()
     {
-        return $this->render('AppBundle:default/statics:info.html.twig');
+       print_r('esta es la portada');
     }
 }
