@@ -42,8 +42,6 @@ class Users extends AbstractFixture implements ContainerAwareInterface, OrderedF
       $codedPassword = $encoder->encodePassword($clearPassword, $user->getSalt());
       $user->setPassword($codedPassword);
 
-      $user->setCountry($this->getCountry());
-
       $user->setStartDate(new \DateTime('now - '.rand(1, 150).' days'));
 
       $manager->persist($user);
@@ -89,16 +87,6 @@ class Users extends AbstractFixture implements ContainerAwareInterface, OrderedF
     );
 
     return  $surnames[array_rand($surnames)].' '.$surnames[array_rand($surnames)];
-  }
-
-  private function getCountry()
-  {
-    $countries = array(
-      'España', 'Francia', 'Inglaterra', 'Italia', 'Noruega','Alemania', 
-      'Croacia', 'Suiza', 'Rusia','Grecia'
-    );
-
-    return $countries[array_rand($countries)];
   }
 
 }

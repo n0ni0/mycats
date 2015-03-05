@@ -3,14 +3,14 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * User
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var integer
@@ -55,13 +55,6 @@ class User
      * @ORM\Column(name="salt", type="string", length=255)
      */
     private $salt;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="country", type="string", length=255)
-     */
-    private $country;
 
     /**
      * @var \DateTime
@@ -197,29 +190,6 @@ class User
     }
 
     /**
-     * Set country
-     *
-     * @param string $country
-     * @return User
-     */
-    public function setCountry($country)
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
-    /**
-     * Get country
-     *
-     * @return string 
-     */
-    public function getCountry()
-    {
-        return $this->country;
-    }
-
-    /**
      * Set startDate
      *
      * @param \DateTime $startDate
@@ -241,4 +211,20 @@ class User
     {
         return $this->startDate;
     }
+
+    public function eraseCredentials()
+    {
+    
+    }
+
+    public function getRoles()
+    {
+      return array('ROLE_USER');
+    }
+
+    public function getUsername()
+    {
+      return $this->getEmail();
+    }
+
 }
