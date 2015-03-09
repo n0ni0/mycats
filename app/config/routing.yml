@@ -1,7 +1,4 @@
-info:
-  path:     site/{page}/
-  defaults: { _controller: AppBundle:Site:static }
+AppBundle:
+  resource: "@AppBundle/Resources/config/routing.yml"
+  prefix:   /
 
-home:
-  path:     /
-  defaults: { _controller: AppBlundle:Default:home }

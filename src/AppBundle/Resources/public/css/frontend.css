@@ -1,0 +1,6 @@
+#loginBox {
+  width: 250px;
+  border: 2px solid #000000;
+  position: absolute;
+  padding: 1em;
+}

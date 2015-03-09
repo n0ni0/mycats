@@ -1,20 +1,23 @@
 {% extends '::base.html.twig' %}
 
 {% block stylesheets %}
-  <link href="{{ asset('bundles/app/css/normalice.css') }}" rel="stylesheet" type="text/css" />
-  <link href="{{ asset('bundles/app/css/layout.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/app/css/normalice.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/app/css/layout.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/app/css/frontend.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 {% block javascripts %}{% endblock %}
 
 {% block body %}
   <header>
-    <h1><a href="#">mycats</a></h1>
+    <h1><a href="{{ path('user_login') }}">mycats</a></h1>
     <nav>
       <ul>
         <li><a id="language_esp" href="#"><img src="{{ asset('bundles/app/images/esp.png') }}"></a></li> 
         <li><a id="language_eng" href="#"><img src="{{ asset('bundles/app/images/eng.png') }}"></a></li>
-        <li><a href="#">Mi perfil</a></li>
-      </ul>
+          {% if is_granted('ROLE_USER') %}
+          <li><a href="{{ path('user_logout') }}"><strong>Cerrar sesión</strong></a></li>
+            <li><a href="#"><strong>{{ app.user.name }}</strong></a></li>
+          {% endif %}
     </nav>
   </header>
 

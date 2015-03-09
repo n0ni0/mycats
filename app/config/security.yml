@@ -2,10 +2,20 @@ security:
     firewalls:
       frontend:
         pattern:     ^/*
-        form_login:  ~
+        anonymous:   ~
+        form_login:
+          login_path: user_login
+          check_path: user_login_check
+          default_target_path: /contact
+        logout: 
+          path: user_logout
+        remember_me:
+          key:       mycats1213
+          lifetime:  5000
 
     access_control:
-      - { path ^/*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+     - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+     - { path: ^/*    , roles: ROLE_USER }
 
     providers:
       users:
