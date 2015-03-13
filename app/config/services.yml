@@ -7,3 +7,7 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+  userManager:
+    class:     AppBundle\Security\UserManager
+    arguments: ["@security.encoder_factory"]

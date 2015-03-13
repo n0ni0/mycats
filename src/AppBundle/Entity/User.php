@@ -15,6 +15,12 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class User implements UserInterface
 {
+  public function __construct()
+  {
+    $this->startDate = new \DateTime('now');
+    $this->salt = md5('time');
+  }
+
     /**
      * @var integer
      *
@@ -176,29 +182,6 @@ class User implements UserInterface
     }
 
     /**
-     * Set salt
-     *
-     * @param string $salt
-     * @return User
-     */
-    public function setSalt($salt)
-    {
-        $this->salt = $salt;
-
-        return $this;
-    }
-
-    /**
-     * Get salt
-     *
-     * @return string 
-     */
-    public function getSalt()
-    {
-        return $this->salt;
-    }
-
-    /**
      * Set startDate
      *
      * @param \DateTime $startDate
@@ -236,4 +219,15 @@ class User implements UserInterface
       return $this->getEmail();
     }
 
+    public function setSalt($salt)
+    {
+      $this->salt = $salt;
+
+      return $this;
+    }
+
+    public function getSalt()
+    {
+      return $this->salt;
+    }
 }

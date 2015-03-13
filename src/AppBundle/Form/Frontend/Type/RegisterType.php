@@ -5,6 +5,7 @@ namespace AppBundle\Form\Frontend\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Validator\Constraints\True;
 
 class RegisterType extends AbstractType
 {
@@ -19,6 +20,11 @@ class RegisterType extends AbstractType
         'second_name' => 'confirm',
         'type'        => 'password',
       ))
+      ->add('legal', 'checkbox', array(
+        'mapped' => false,
+        'required' => true,
+        'constraints' => new True(),
+       ))
       ->add('Register', 'submit');
   }
 
