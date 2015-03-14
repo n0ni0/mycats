@@ -8,6 +8,12 @@
 {% block javascripts %}{% endblock %}
 
 {% block body %}
+{% for flashMessage in app.session.flashbag.get('notice') %}
+<div class="flash-notice">
+  {{ flashMessage }}
+</div>
+{% endfor %}
+
   <header>
     <h1><a href="{{ path('user_login') }}">mycats</a></h1>
     <nav>
