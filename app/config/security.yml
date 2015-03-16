@@ -6,15 +6,19 @@ security:
         form_login:
           login_path: user_login
           check_path: user_login_check
-          default_target_path: /contact
-        logout: 
-          path: user_logout
+          default_target_path: /list
+        logout:
+          path: /logout
+          target: /login
         remember_me:
           key:       mycats1213
           lifetime:  5000
 
     access_control:
-     - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+     - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+     - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+     - { path: ^/contact, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+     - { path: ^/_wdt, roles: IS_AUTHENTICATED_ANONYMOUSLY  }
      - { path: ^/*    , roles: ROLE_USER }
 
     providers:

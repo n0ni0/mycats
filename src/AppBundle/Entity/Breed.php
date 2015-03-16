@@ -37,7 +37,6 @@ class Breed
      */
     private $slug;
 
-
     /**
      * Get id
      *
@@ -86,7 +85,7 @@ class Breed
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {

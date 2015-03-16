@@ -39,7 +39,7 @@ class AccountController extends Controller
 
       $user->flashMessag($request);
 
-      return $this->redirect($this->generateUrl('contact'));
+      return $this->redirect($this->generateUrl('user_login'));
     }
 
     return $this->render(

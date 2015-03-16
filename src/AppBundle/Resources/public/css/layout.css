@@ -66,3 +66,8 @@ a:active  { position: relative; top: 1px; }
   margin: 0 auto 1em;
   width: 80%;
 }
+
+.navigation a {
+ color: #00005C; text-decoration: none; outline: none;
+ font-size: 20px;
+}

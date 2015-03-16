@@ -3,7 +3,7 @@ contact:
   defaults: { _controller: AppBundle:Account:contact }
 
 user_login:
-  path:     /
+  path:     /login
   defaults: { _controller:AppBundle:Account:login }
 
 user_login_check:
@@ -15,3 +15,7 @@ user_logout:
 register:
   path:     /register
   defaults: { _controller:AppBundle:Account:register }
+
+list:
+  path:     /list
+  defaults: { _controller:AppBundle:Show:list }

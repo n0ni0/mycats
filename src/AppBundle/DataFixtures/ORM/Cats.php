@@ -30,7 +30,7 @@ class Cats extends AbstractFixture implements OrderedFixtureInterface
       $cat->setBreed($breed);
       $cat->setGenre('male');
       $cat->setAge(rand(1,20));
-      $cat->setPhoto('photo'.rand(1,20).'jpg');
+      $cat->setPhoto('photo'.rand(1,20).'.jpg');
       $cat->setComments($this->getComments());
       $cat->setRevised(true);
 
