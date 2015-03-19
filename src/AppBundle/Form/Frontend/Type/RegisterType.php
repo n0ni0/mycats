@@ -21,11 +21,13 @@ class RegisterType extends AbstractType
         'type'        => 'password',
       ))
       ->add('legal', 'checkbox', array(
-        'mapped' => false,
-        'required' => true,
+        'mapped'      => false,
+        'required'    => true,
         'constraints' => new True(),
        ))
-      ->add('Register', 'submit');
+       ->add('Register', 'submit', array(
+        'label' => 'Registrarse'
+       ));
   }
 
   public function setDefaultsOptions(OptionsResolverInterface $resolver)

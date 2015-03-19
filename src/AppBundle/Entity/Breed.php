@@ -94,7 +94,7 @@ class Breed
 
     public function __toString()
     {
-      return $this->getNombre();
+      return $this->getName();
     }
 
 }

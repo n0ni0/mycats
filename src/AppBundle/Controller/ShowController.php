@@ -4,7 +4,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Cat;
+use AppBundle\Entity\CatRepository;
 
 
 class ShowController extends Controller
@@ -12,7 +12,7 @@ class ShowController extends Controller
   public function listAction()
   {
     $em  = $this->getDoctrine()->getEntityManager();
-    $cat = $em->getRepository('AppBundle:Cat')->findAll();
+    $cat = $em->getRepository('AppBundle:Cat')->findAllCats();
 
     if(!$cat){
       throw $this->createNotFoundException(

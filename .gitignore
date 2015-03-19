@@ -11,3 +11,5 @@
 /vendor/
 /bin/
 /composer.phar
+/composer.lock
+/src/web/bundles/app/images

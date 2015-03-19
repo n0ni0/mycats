@@ -19,3 +19,7 @@ register:
 list:
   path:     /list
   defaults: { _controller:AppBundle:Show:list }
+
+new:
+  path:     /new
+  defaults: { _controller:AppBundle:User:newCat }

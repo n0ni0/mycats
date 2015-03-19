@@ -3,12 +3,14 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Cat
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\CatRepository")
  */
 class Cat
 {
@@ -48,7 +50,7 @@ class Cat
     /**
      * @var integer
      *
-     * @ORM\Column(name="age", type="integer")
+     * @ORM\Column(name="age", type="integer", length=2)
      */
     private $age;
 
@@ -72,6 +74,28 @@ class Cat
      * @ORM\Column(name="revised", type="boolean")
      */
     private $revised;
+
+    /**
+     * @Assert\Image(maxSize = "500K")
+     *
+     */
+    private $formPhoto;
+
+    /**
+     * @param UploadedFile $formPhoto
+     */
+    public function setFormPhoto(UploadedFile $formPhoto = null)
+    {
+      $this->formPhoto = $formPhoto;
+    }
+
+    /**
+     * @return UploadedFile
+     */
+    public function getFormPhoto()
+    {
+      return $this->formPhoto;
+    }
 
 
     /**
@@ -264,5 +288,17 @@ class Cat
     public function getRevised()
     {
         return $this->revised;
+    }
+
+    public function uploadPhoto($folder)
+    {
+      if(null === $this->formPhoto){
+        return;
+      }
+
+      $photoName = uniqid('mycats-').'-photo.jpg';
+
+      $this->formPhoto->move($folder, $photoName);
+      $this->setPhoto($photoName);
     }
 }
