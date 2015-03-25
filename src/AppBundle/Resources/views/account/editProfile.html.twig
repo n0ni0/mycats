@@ -1,0 +1,23 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %}Mi perfíl{% endblock %}
+{% block article %}
+  <h2>Editar mi perfíl</h2>
+  {{ form_start(form) }}
+    <div>
+      {{ form_errors(form) }}
+    </div>
+    <div>
+    <fieldset>
+      <legend>Datos personales:</legend>
+         {{ form_row(form.name) }}
+         {{ form_row(form.surname) }}
+         {{ form_row(form.email) }}
+         <h3>Vuelve a escribir tu contraseña para actualizar tu perfíl de usuario</h3>
+         {{ form_row(form.password) }}
+    </fieldset>
+  {{ form_end(form) }}
+    </div>
+
+{% endblock %}
+

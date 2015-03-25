@@ -1,0 +1,18 @@
+<select id="selectBreed">
+    <option selected value ="defaultText">Seleccione una raza</option>
+  {% for breed in breeds  %}
+    <option value="{{ breed.id }}"
+      data-url="{{ url('change_breed', { 'breed': breed.id }) }}">
+      {{ breed.name }}
+    </option>
+  {% endfor %}
+</select>
+
+<script type="text/javascript">
+  var list = document.getElementById('selectBreed');
+  list.onchange = function()
+  {
+    var url = list.options[list.selectedIndex].getAttribute('data-url');
+    window.location = url;
+  };
+</script>

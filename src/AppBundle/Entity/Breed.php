@@ -10,7 +10,7 @@ use AppBundle\Util\Util;
  * Breed
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\BreedRepository")
  */
 class Breed
 {

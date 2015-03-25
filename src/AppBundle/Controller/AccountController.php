@@ -7,7 +7,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\SecurityContext;
 use AppBundle\Form\Frontend\Type\ContactType;
-use AppBundle\Form\Frontend\Type\RegisterType;
+use AppBundle\Form\Frontend\Type\UserType;
+use AppBundle\Form\Frontend\Type\ProfileType;
 use AppBundle\Entity\User;
 
 class AccountController extends Controller
@@ -25,8 +26,7 @@ class AccountController extends Controller
   public function registerAction(Request $request)
   {
     $user = new User();
-
-    $form = $this->createForm(new RegisterType(), $user);
+    $form = $this->createForm(new UserType(), $user);
     $form->handleRequest($request);
 
     if($form->isValid()){
@@ -78,4 +78,36 @@ class AccountController extends Controller
         'form' => $contactForm->createView()
     ));
   }
+
+  public function editProfileAction(Request $request)
+  {
+    $user = new User();
+    $user = $this->get('security.context')->getToken()->getUser();
+    $form = $this->createForm(new ProfileType(), $user);
+    $originalPassword = $form->getData()->getPassword();
+    $form->handleRequest($request);
+
+    if($form->isValid()){
+      if(null == $user->getPassword()){
+        $user->setPassword($originalPassword);
+      }
+      else{
+      $this->get('userManager')->setUserPassword($user,
+      $form->get('password')->getData());
+      }
+
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($user);
+      $em->flush();
+
+      return $this->redirect($this->generateUrl('user_profile'));
+    }
+
+    return $this->render(
+      'AppBundle:account:editProfile.html.twig', array(
+        'form' => $form->createView()
+      ));
+
+  }
+
 }

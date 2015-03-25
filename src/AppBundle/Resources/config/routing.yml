@@ -20,6 +20,20 @@ list:
   path:     /list
   defaults: { _controller:AppBundle:Show:list }
 
+list_breed:
+  path:     /list/{breed}
+  defaults: { _controller:AppBundle:Show:listBreed }
+
 new:
   path:     /new
   defaults: { _controller:AppBundle:User:newCat }
+
+change_breed:
+  pattern:      /list/{breed}
+  defaults:     { _controller: AppBundle:Show:changeBreed }
+  requirements: 
+      breed:    .+
+
+user_profile:
+  path:     /profile
+  defaults: { _controller: AppBundle:Account:editProfile }

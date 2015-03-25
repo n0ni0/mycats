@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Validator\Constraints\True;
 
-class RegisterType extends AbstractType
+class UserType extends AbstractType
 {
   public function buildform(FormBuilderInterface $builder, array $options)
   {

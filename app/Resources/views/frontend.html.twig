@@ -22,8 +22,9 @@
         <li><a id="language_eng" href="#"><img src="{{ asset('bundles/app/images/eng.png') }}"></a></li>
           {% if is_granted('ROLE_USER') %}
           <li><a href="{{ path('user_logout') }}"><strong>Cerrar sesión</strong></a></li>
-            <li><a href="#"><strong>{{ app.user.name }}</strong></a></li>
+          <li><a href="{{ path('user_profile') }}"><strong>{{ app.user.name }}</strong></a></li>
             <li><a id="newcat" href="{{ path('new') }}"><strong>Nueva mascota</strong></a></li>
+            <li>{{ render(controller('AppBundle:Show:selectBreeds')) }}</li>
           {% endif %}
     </nav>
   </header>

@@ -9,6 +9,7 @@
    {% for pagination in pagination %}
     <tr {% if loop.index is odd %}class="color"{% endif %}>
       <td><strong>Nombre: </strong>{{ pagination.name }}</td>
+      <td><strong>Raza: </strong>{{ pagination.breed }}</td>
       <td><strong>Género: </strong>{{ pagination.genre }}</td>
       <td><strong>Edad: </strong>{{ pagination.age }}</td>
       <td><img src="{{ asset('bundles/app/images/' ~ pagination.photo) }}" alt="" /></td>
