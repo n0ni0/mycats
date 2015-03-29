@@ -231,11 +231,4 @@ class User implements UserInterface
       return $this->salt;
     }
 
-    public function flashMessag($request)
-    {
-      $request->getSession()->getFlashBag()->add(
-        'notice',
-        'Te has registrado correctamente');
-    }
-
 }

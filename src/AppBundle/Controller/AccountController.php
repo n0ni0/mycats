@@ -37,7 +37,7 @@ class AccountController extends Controller
       $em->persist($user);
       $em->flush();
 
-      $user->flashMessag($request);
+      $this->addFlash('notice', 'Te has registrado correctamente');
 
       return $this->redirect($this->generateUrl('user_login'));
     }
@@ -69,7 +69,7 @@ class AccountController extends Controller
                 'content' => $data['content']
           )
         ));
-      $user->flashMessag($request);
+      $this->addFlash('notice', 'Formulario enviado correctamente');
       $mailer->send($message);
       return $this->redirect($this->generateUrl('contact'));
     }
@@ -100,7 +100,8 @@ class AccountController extends Controller
       $em->persist($user);
       $em->flush();
 
-      return $this->redirect($this->generateUrl('user_profile'));
+      $this->addFlash('notice', 'Perfíl editado correcamente');
+      return $this->redirect($this->generateUrl('list'));
     }
 
     return $this->render(

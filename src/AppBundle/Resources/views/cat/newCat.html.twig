@@ -3,8 +3,9 @@
 
 {% block title %}Nueva mascota{% endblock %}
 {% block article %}
-<h2>Añade una mascota nueva</h2>
-  {{ form_start(form) }}
+  <div class="content">
+    <h2>Añade una mascota nueva</h2>
+    {{ form_start(form) }}
     {{ form_errors(form) }}
     <fieldset>
       <legend>Datos personales:</legend>
@@ -15,5 +16,6 @@
          {{ form_row(form.comments) }}
          {{ form_row(form.formPhoto) }}
     </fieldset>
-  {{ form_end(form) }}
+    {{ form_end(form) }}
+  </div>
 {% endblock %}

@@ -7,7 +7,7 @@ body {
 
 header {
   color: black;
-  background: none repeat scroll 0 0 #003399;
+  background: none repeat scroll 0 0 #222222;
   position: relative;
   height: 60px;
 
@@ -38,36 +38,35 @@ nav ul li a {
   font-size: 18px;
 }
 
-#language_esp {
-  background: url("images/photo1.jpg") no-repeat scroll center transparent;
-}
-
-#language_eng {
-  
-}
 
 footer {
   clear: both;
   color: #FFFFFF;
   font-size: 13px;
   padding: 1em;
-  background: none repeat scroll 0 0 #003399;
+  background: none repeat scroll 0 0 #222222;
   position: relative;
 }
 
-a         { color: #FFFFFF; text-decoration: none; outline: none; }
+a         { color: #555555; text-decoration: none; outline: none; }
 a:visited { color: #FFFFFF; }
-a:hover   { color: #C06 !important; }
+a:hover   { color: #A7A7A7 !important; }
 a:active  { position: relative; top: 1px; }
 
 #container {
   background: none repeat scroll 0 0 #ffffff;
   box-shadow: 0 1px 5px #444;
-  margin: 0 auto 1em;
-  width: 80%;
+  margin: 0 auto 0;
+  width: 100%;
 }
 
 .navigation a {
  color: #00005C; text-decoration: none; outline: none;
  font-size: 20px;
+}
+
+.flash-notice {
+  margin-top: 1.5em;
+  font-size: 20px;
+  color:red;
 }

@@ -2,6 +2,10 @@ contact:
   path:     /contact
   defaults: { _controller: AppBundle:Account:contact }
 
+privacy:
+  path:     /privacy
+  defaults: { _controller: AppBundle:Static:privacy }
+
 user_login:
   path:     /login
   defaults: { _controller:AppBundle:Account:login }
@@ -26,7 +30,7 @@ list_breed:
 
 new:
   path:     /new
-  defaults: { _controller:AppBundle:User:newCat }
+  defaults: { _controller:AppBundle:Cat:newCat }
 
 change_breed:
   pattern:      /list/{breed}

@@ -10,7 +10,7 @@ use AppBundle\Entity\Cat;
 use AppBundle\Entity\User;
 use AppBundle\Form\Frontend\Type\CatType;
 
-class UserController extends Controller
+class CatController extends Controller
 {
   public function newCatAction(Request $request)
   {
@@ -33,7 +33,7 @@ class UserController extends Controller
       return $this->redirect($this->generateUrl('new'));
     }
 
-    return $this->render('AppBundle:user:newCat.html.twig', array(
+    return $this->render('AppBundle:cat:newCat.html.twig', array(
       'form' => $form->createView()
     ));
   }

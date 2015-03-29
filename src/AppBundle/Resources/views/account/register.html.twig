@@ -2,8 +2,9 @@
 
 {% block title %}Regístrate{% endblock %}
 {% block article %}
-<h2>Regístrate</h2>
-  {{ form_start(form) }}
+  <div class="content">
+    <h2>Regístrate</h2>
+    {{ form_start(form) }}
     {{ form_errors(form) }}
     <fieldset>
       <legend>Datos personales:</legend>
@@ -12,5 +13,6 @@
          {{ form_row(form.email) }}
          {{ form_row(form.password) }}
     </fieldset>
-  {{ form_end(form) }}
+    {{ form_end(form) }}
+  </div>
 {% endblock %}
