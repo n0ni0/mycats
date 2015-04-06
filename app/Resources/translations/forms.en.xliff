@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+  <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="1">
+        <source>register.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>register.register</source>
+        <target>Register</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>register.surname</source>
+        <target>Last name</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>register.mail</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>register.password</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>register.confirmPassword</source>
+        <target>Confirm password</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>register.terms</source>
+        <target>Terms and conditions</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>register.submit</source>
+        <target>Sign Up</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>register.title</source>
+        <target>Sign Up</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>register.leyend</source>
+        <target>Personal dates</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>register.article</source>
+        <target>Sign up form</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>login.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>login.password</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>login.dontClose</source>
+        <target>Don't close session</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>login.submit</source>
+        <target>Log in</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>login.signUp</source>
+        <target>Sign Up</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>cat.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>cat.male</source>
+        <target>Male</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>cat.female</source>
+        <target>Female</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>cat.breed</source>
+        <target>Breed</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>cat.age</source>
+        <target>Age</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>cat.comment</source>
+        <target>Comment</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>cat.photo</source>
+        <target>Photo</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>cat.submit</source>
+        <target>Submit</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>cat.genre</source>
+        <target>Genre</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>cat.title</source>
+        <target>New cat</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>cat.article</source>
+        <target>Add a new cat</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>cat.legend</source>
+        <target>Details of new cat</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>profile.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>profile.surname</source>
+        <target>Last name</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>profile.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>profile.password</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>profile.confirmPassword</source>
+        <target>Confirm Password</target>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>profile.submit</source>
+        <target>Submit</target>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>profile.title</source>
+        <target>My profile</target>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>profile.article</source>
+        <target>Edit my profile</target>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>profile.leyend</source>
+        <target>Personal dates</target>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>profile.textPassword</source>
+        <target>Re-enter password to update your user profile</target>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>contact.article</source>
+        <target>Contact Form</target>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>contact.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>contact.mail</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>contact.message</source>
+        <target>Message</target>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>contact.submit</source>
+        <target>Send</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -8,6 +8,15 @@ class StaticController extends Controller
 {
   public function privacyAction()
   {
-    return $this->render('AppBundle:static:privacy.html.twig');
+    $locale = $this->getRequest()->getLocale();
+
+    switch($locale){
+      case "es":
+        return $this->render('AppBundle:static:privacyEs.html.twig');
+        break;
+      case "en":
+        return $this->render('AppBundle:static:privacyEn.html.twig');
+    }
+    
   }
 }

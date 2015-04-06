@@ -1,5 +1,5 @@
 <select id="selectBreed">
-    <option selected value ="defaultText">Seleccione una raza</option>
+  <option selected value ="defaultText">{{ "select.breed" | trans({}, 'menus') }}</option>
   {% for breed in breeds  %}
     <option value="{{ breed.id }}"
       data-url="{{ url('change_breed', { 'breed': breed.id }) }}">

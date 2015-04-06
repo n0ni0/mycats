@@ -29,7 +29,10 @@ class CatController extends Controller
       $em->persist($cat);
       $em->flush();
 
-      $user->flashMessag($request);
+      $request->getSession()->getFlashBag()->add(
+        'notice',
+        $this->get('translator')->trans('flash.catCreated', array(), 'messages'
+      ));
       return $this->redirect($this->generateUrl('new'));
     }
 

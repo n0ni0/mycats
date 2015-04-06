@@ -1,14 +1,16 @@
 
 {% extends '::frontend.html.twig' %}
 
-{% block title %}Nueva mascota{% endblock %}
+{% block title %}
+  {{ "cat.title" | trans({}, 'forms') }}
+{% endblock %}
 {% block article %}
   <div class="content">
-    <h2>Añade una mascota nueva</h2>
+    <h2>{{ "cat.article" | trans({}, 'forms') }}</h2>
     {{ form_start(form) }}
     {{ form_errors(form) }}
     <fieldset>
-      <legend>Datos personales:</legend>
+      <legend>{{ "cat.legend" | trans({}, 'forms') }}:</legend>
          {{ form_row(form.breed) }}
          {{ form_row(form.name) }}
          {{ form_row(form.genre) }}

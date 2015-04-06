@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+  <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="1">
+        <source>contact</source>
+        <target>Contacto</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>privacy</source>
+        <target>Privacidad</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>login.title</source>
+        <target>Bienvenido</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>list.name</source>
+        <target>Nombre</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>list.breed</source>
+        <target>Raza</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>list.genre</source>
+        <target>Género</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>list.age</source>
+        <target>Edad</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>list.comment</source>
+        <target>Comentario</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>privacy.title</source>
+        <target>Privacidad</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>privacy.article</source>
+        <target>Privacidad</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>flash.register</source>
+        <target>Te has registrado correctamente</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>flash.contact</source>
+        <target>Mensaje enviado correctamente</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>flash.editProfile</source>
+        <target>Perfil modificado correctamente</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>flash.catCreated</source>
+        <target>Gato creado correctamente</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

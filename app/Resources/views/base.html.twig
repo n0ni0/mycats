@@ -12,8 +12,8 @@
 
 <footer>
   &copy; {{ 'now' | date('Y') }} - mycats
-  <a href="{{ path('contact') }}">Contacto</a>
-  <a href="{{ path('privacy') }}">Privacidad</a>
+  <a href="{{ path('contact') }}">{{ "contact" | trans }}</a>
+  <a href="{{ path('privacy') }}">{{ "privacy" | trans }}</a>
 </footer>
 
 {% block javascripts %}{% endblock %}

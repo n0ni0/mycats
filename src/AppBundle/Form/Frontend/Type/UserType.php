@@ -12,28 +12,41 @@ class UserType extends AbstractType
   public function buildform(FormBuilderInterface $builder, array $options)
   {
     $builder
-      ->add('name')
-      ->add('surname')
-      ->add('email')
+      ->add('name', 'text', array(
+        'label'              => 'register.name',
+        'translation_domain' => 'forms'
+      ))
+      ->add('surname', 'text', array(
+        'label'              => 'register.surname',
+        'translation_domain' => 'forms'
+      ))
+      ->add('email', 'email', array(
+        'label'              => 'register.mail',
+        'translation_domain' => 'forms'
+      ))
       ->add('password', 'repeated', array(
-        'first_name'  => 'password',
-        'second_name' => 'confirm',
-        'type'        => 'password',
+        'options'        => array('translation_domain' => 'forms'),
+        'first_options'  => array('label' => 'register.password'),
+        'second_options' => array('label' => 'register.confirmPassword'),
+        'type'           => 'password',
       ))
       ->add('legal', 'checkbox', array(
-        'mapped'      => false,
-        'required'    => true,
-        'constraints' => new True(),
+        'mapped'             => false,
+        'required'           => true,
+        'constraints'        => new True(),
+        'label'              => 'register.terms',
+        'translation_domain' => 'forms'
        ))
        ->add('Register', 'submit', array(
-        'label' => 'Registrarse'
+         'label'              => 'register.submit',
+         'translation_domain' => 'forms'
        ));
   }
 
   public function setDefaultsOptions(OptionsResolverInterface $resolver)
   {
     $resolver->setDefaults(array(
-      'data_class' => 'AppBundle\Entity\User'
+      'data_class'         => 'AppBundle\Entity\User',
     ));
   }
 

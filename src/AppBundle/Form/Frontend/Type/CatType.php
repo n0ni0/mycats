@@ -11,23 +11,40 @@ class CatType extends AbstractType
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
     $builder
-      ->add('name')
+      ->add('name', 'text', array(
+        'label'              => 'cat.name',
+        'translation_domain' => 'forms'
+      ))
       ->add('genre', 'choice', array(
-        'choices' => array(
-          'male'   => 'Macho',
-          'female' => 'Hembra'
+        'label'              => 'cat.genre',
+        'translation_domain' => 'forms',
+        'choices'            => array(
+          'male'             => 'cat.male',
+          'female'           => 'cat.female'
       )))
       ->add('breed', 'entity', array(
-        'class'    => 'AppBundle:Breed',
-        'property' => 'name',
+        'label'              => 'cat.breed',
+        'translation_domain' => 'forms',
+        'class'              => 'AppBundle:Breed',
+        'property'           => 'name',
       ))
-      ->add('age')
-      ->add('comments')
+      ->add('age', 'text', array(
+        'label'              => 'cat.age',
+        'translation_domain' => 'forms'
+      ))
+      ->add('comments', 'text', array(
+        'label'              => 'cat.comment',
+        'translation_domain' => 'forms'
+      ))
       ->add('formPhoto', 'file',array(
-        'required' => false
+        'label'              => 'cat.photo',
+        'translation_domain' => 'forms',
+        'required'           => true
       ))
       ->add('create', 'submit', array(
-        'label' => 'Crear'));
+        'label'              => 'cat.submit',
+        'translation_domain' => 'forms'
+      ));
   }
 
   public function setDefaultsOptions(OptionsResolverInterface $resolver)

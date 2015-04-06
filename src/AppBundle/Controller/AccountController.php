@@ -10,6 +10,7 @@ use AppBundle\Form\Frontend\Type\ContactType;
 use AppBundle\Form\Frontend\Type\UserType;
 use AppBundle\Form\Frontend\Type\ProfileType;
 use AppBundle\Entity\User;
+use Symfony\Component\Form\FormError;
 
 class AccountController extends Controller
 {
@@ -30,6 +31,15 @@ class AccountController extends Controller
     $form->handleRequest($request);
 
     if($form->isValid()){
+      $email = $form['email']->getData();
+      $em = $this->getDoctrine()->getManager();
+      $repo = $em->getRepository('AppBundle:User')->findOneByEmail($email);
+
+      if($repo !== null){
+          $form['email']->addError(new FormError('Email en uso'));
+      }
+
+      else{
       $this->get('userManager')->setUserPassword($user,
       $form->get('password')->getData());
 
@@ -37,9 +47,13 @@ class AccountController extends Controller
       $em->persist($user);
       $em->flush();
 
-      $this->addFlash('notice', 'Te has registrado correctamente');
+      $request->getSession()->getFlashBag()->add(
+        'notice',
+        $this->get('translator')->trans('flash.register', array(), 'messages'
+      ));
 
       return $this->redirect($this->generateUrl('user_login'));
+      }
     }
 
     return $this->render(
@@ -69,7 +83,11 @@ class AccountController extends Controller
                 'content' => $data['content']
           )
         ));
-      $this->addFlash('notice', 'Formulario enviado correctamente');
+      $request->getSession()->getFlashBag()->add(
+        'notice',
+        $this->get('translator')->trans('flash.contact', array(), 'messages'
+      ));
+
       $mailer->send($message);
       return $this->redirect($this->generateUrl('contact'));
     }
@@ -100,7 +118,10 @@ class AccountController extends Controller
       $em->persist($user);
       $em->flush();
 
-      $this->addFlash('notice', 'Perfíl editado correcamente');
+      $request->getSession()->getFlashBag()->add(
+        'notice',
+        $this->get('translator')->trans('flash.editProfile', array(), 'messages'
+      ));
       return $this->redirect($this->generateUrl('list'));
     }
 

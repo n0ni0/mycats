@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+  <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="1">
+        <source>register.name</source>
+        <target>Nombre</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>register.register</source>
+        <target>Regístrate</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>register.surname</source>
+        <target>Apellidos</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>register.mail</source>
+        <target>Correo</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>register.password</source>
+        <target>Contraseña</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>register.confirmPassword</source>
+        <target>Confirmar contraseña</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>register.terms</source>
+        <target>Terminos y condiciones</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>register.submit</source>
+        <target>Regístrate</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>register.title</source>
+        <target>Regístrate</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>register.leyend</source>
+        <target>Datos personales</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>register.article</source>
+        <target>Formulario de registro</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>login.email</source>
+        <target>Correo electrónico</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>login.password</source>
+        <target>Contraseña</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>login.dontClose</source>
+        <target>No cerrar sesión</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>login.submit</source>
+        <target>Entrar</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>login.signUp</source>
+        <target>Regístrate</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>cat.name</source>
+        <target>Nombre</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>cat.male</source>
+        <target>Macho</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>cat.female</source>
+        <target>Hembra</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>cat.breed</source>
+        <target>Raza</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>cat.age</source>
+        <target>Edad</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>cat.comment</source>
+        <target>Comentario</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>cat.photo</source>
+        <target>Foto</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>cat.submit</source>
+        <target>Enviar</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>cat.genre</source>
+        <target>Género</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>cat.title</source>
+        <target>Nuevo gato</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>cat.article</source>
+        <target>Añade un nuevo gato</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>cat.legend</source>
+        <target>Datos del nuevo gato</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>profile.name</source>
+        <target>Nombre</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>profile.surname</source>
+        <target>Apellidos</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>profile.email</source>
+        <target>Correo electrónico</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>profile.password</source>
+        <target>Contraseña</target>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>profile.confirmPassword</source>
+        <target>Confirmar contraseña</target>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>profile.submit</source>
+        <target>Enviar</target>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>profile.title</source>
+        <target>Mi perfil</target>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>profile.article</source>
+        <target>Editar mi perfil</target>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>profile.leyend</source>
+        <target>Datos personales</target>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>profile.textPassword</source>
+        <target>Vuelve a escribir la contraseña para actualizar tu perfil de usuario</target>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>contact.article</source>
+        <target>Formulario de contacto</target>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>contact.name</source>
+        <target>Nombre</target>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>contact.mail</source>
+        <target>Correo electrónico</target>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>contact.message</source>
+        <target>Mensaje</target>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>contact.submit</source>
+        <target>Enviar</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

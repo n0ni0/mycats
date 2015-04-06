@@ -12,16 +12,27 @@ class ProfileType extends AbstractType
   public function buildform(FormBuilderInterface $builder, array $options)
   {
     $builder
-      ->add('name')
-      ->add('surname')
-      ->add('email')
+      ->add('name', 'text', array(
+        'label'              => 'profile.name',
+        'translation_domain' => 'forms'
+      ))
+      ->add('surname', 'text', array(
+        'label'              => 'profile.surname',
+        'translation_domain' => 'forms'
+      ))
+      ->add('email', 'email', array(
+        'label'              => 'profile.email',
+        'translation_domain' => 'forms'
+      ))
       ->add('password', 'repeated', array(
-        'first_name'  => 'password',
-        'second_name' => 'confirm',
+        'options'     =>  array('translation_domain' => 'forms'),
+        'first_options'  => array('label' => 'profile.password'),
+        'second_options' => array('label' => 'profile.confirmPassword'),
         'type'        => 'password',
       ))
       ->add('Register', 'submit', array(
-       'label' => 'Modificar mi perfíl'
+        'label'              => 'profile.submit',
+        'translation_domain' => 'forms'
        ));
   }
 

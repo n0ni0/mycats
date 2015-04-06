@@ -1,17 +1,20 @@
 {% extends '::frontend.html.twig' %}
 
-{% block title %}Regístrate{% endblock %}
+{% block title %}
+  {{ "register.title" | trans({}, 'forms') }}
+{% endblock %}
+
 {% block article %}
   <div class="content">
-    <h2>Regístrate</h2>
+    <h2>{{ "register.article" | trans({}, 'forms') }}</h2>
     {{ form_start(form) }}
     {{ form_errors(form) }}
     <fieldset>
-      <legend>Datos personales:</legend>
-         {{ form_row(form.name) }}
-         {{ form_row(form.surname) }}
-         {{ form_row(form.email) }}
-         {{ form_row(form.password) }}
+      <legend>{{ "register.leyend" | trans({}, 'forms') }}</legend>
+        {{ form_row(form.name) }}
+        {{ form_row(form.surname) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.password) }}
     </fieldset>
     {{ form_end(form) }}
   </div>

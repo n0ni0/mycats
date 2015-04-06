@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+  <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="1">
+        <source>new.cat</source>
+        <target>New cat</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>session.close</source>
+        <target>Sign Out</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>select.breed</source>
+        <target>Select breed</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

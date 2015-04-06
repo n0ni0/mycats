@@ -8,12 +8,12 @@
     <table>
     {% for pagination in pagination %}
       <tr {% if loop.index is odd %}class="color"{% endif %}>
-        <td><strong>Nombre: </strong>{{ pagination.name }}</td>
-        <td><strong>Raza: </strong>{{ pagination.breed }}</td>
-        <td><strong>Género: </strong>{{ pagination.genre }}</td>
-        <td><strong>Edad: </strong>{{ pagination.age }}</td>
+        <td><strong>{{ "list.name" | trans({}, 'messages') }}: </strong>{{ pagination.name }}</td>
+        <td><strong>{{ "list.breed" | trans({}, 'messages') }}: </strong>{{ pagination.breed }}</td>
+        <td><strong>{{ "list.genre" | trans({}, 'messages') }}: </strong>{{ pagination.genre }}</td>
+        <td><strong>{{ "list.age" | trans({}, 'messages') }}: </strong>{{ pagination.age }}</td>
         <td><img src="{{ asset('bundles/app/images/' ~ pagination.photo) }}" alt="" /></td>
-        <td><strong>Comentario: </strong>{{ pagination.comments }}</td>
+        <td><strong>{{ "list.comment" | trans({}, 'messages') }}: </strong>{{ pagination.comments }}</td>
       </tr>
     {% endfor %}
     </table>

@@ -13,14 +13,21 @@
     <h1><a id="logo" href="{{ path('list') }}">mycats</a></h1>
     <nav>
       <ul>
-        <li><a id="language_esp" href="#"><img src="{{ asset('bundles/app/images/esp.png') }}"></a></li>
-        <li><a id="language_eng" href="#"><img src="{{ asset('bundles/app/images/eng.png') }}"></a></li>
-          {% if is_granted('ROLE_USER') %}
-          <li><a href="{{ path('user_logout') }}"><strong>Cerrar sesión</strong></a></li>
-          <li><a href="{{ path('user_profile') }}"><strong>{{ app.user.name }}</strong></a></li>
-            <li><a id="newcat" href="{{ path('new') }}"><strong>Nueva mascota</strong></a></li>
-            <li>{{ render(controller('AppBundle:Show:selectBreeds')) }}</li>
-          {% endif %}
+        <li><a id="language_esp" href="{{ path('list', { '_locale': 'es' }) }}">
+          <img src="{{ asset('bundles/app/images/esp.png') }}"></a></li>
+        <li><a id="language_eng" href="{{ path('list', { '_locale': 'en' }) }}">
+          <img src="{{ asset('bundles/app/images/eng.png') }}"></a></li>
+
+        {% if is_granted('ROLE_USER') %}
+          <li><a href="{{ path('user_logout') }}">
+            <strong>{{ "session.close" | trans({}, 'menus') }}</strong></a></li>
+          <li><a href="{{ path('user_profile') }}">
+            <strong>{{ app.user.name }}</strong></a></li>
+          <li><a id="newcat" href="{{ path('new') }}">
+            <strong>{{ "new.cat" | trans({}, 'menus') }}</strong></a></li>
+          <li>{{ render(controller('AppBundle:Show:selectBreeds')) }}</li>
+        {% endif %}
+        </ul>
     </nav>
   </header>
 
