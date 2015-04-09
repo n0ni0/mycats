@@ -10,3 +10,6 @@ AppBundle:
     _locale:     es|en
   defaults:
     _locale:     es
+
+_liip_imagine:
+  resource: "@LiipImagineBundle/Resources/config/routing.xml"
