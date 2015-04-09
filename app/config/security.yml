@@ -1,5 +1,14 @@
 security:
     firewalls:
+      admin:
+        pattern: ^/admin
+        http_basic: 
+          realm: "mycats cpanel"
+          provider: in_memory
+        logout:
+          path: /logout
+          target: user_login
+
       frontend:
         pattern:     ^/*
         anonymous:   ~
@@ -17,10 +26,18 @@ security:
     access_control:
      - { path: ^/(es|en)/(login|register|contact|privacy|_wdt), roles: IS_AUTHENTICATED_ANONYMOUSLY }
      - { path: ^/(es|en)/*    , roles: ROLE_USER }
+     - { path:  ^/admin, roles: ROLE_ADMIN }
 
     providers:
       users:
         entity: { class: AppBundle\Entity\User, property: email }
+      in_memory:
+        memory:
+          users:
+            administrator:
+              password: theboss
+              roles: ROLE_ADMIN
 
     encoders:
+      Symfony\Component\Security\Core\User\User: plaintext
       AppBundle\Entity\User: { algorithm: sha512, iterations: 10 }

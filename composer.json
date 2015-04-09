@@ -21,7 +21,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
         "raulfraile/ladybug-bundle": "~1.0",
-        "knplabs/knp-paginator-bundle": "~2.4"
+        "knplabs/knp-paginator-bundle": "~2.4",
+        "javiereguiluz/easyadmin-bundle": "~1.1"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

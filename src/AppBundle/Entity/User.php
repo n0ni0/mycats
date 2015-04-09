@@ -211,7 +211,7 @@ class User implements UserInterface
 
     public function getRoles()
     {
-      return array('ROLE_USER');
+      return array('ROLE_USER', 'ROLE_ADMIN');
     }
 
     public function getUsername()
@@ -230,5 +230,10 @@ class User implements UserInterface
     {
       return $this->salt;
     }
+
+   public function __toString()
+   {
+    return $this->getName();
+   }
 
 }

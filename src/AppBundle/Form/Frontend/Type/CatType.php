@@ -32,7 +32,7 @@ class CatType extends AbstractType
         'label'              => 'cat.age',
         'translation_domain' => 'forms'
       ))
-      ->add('comments', 'text', array(
+      ->add('comments', 'textarea', array(
         'label'              => 'cat.comment',
         'translation_domain' => 'forms'
       ))

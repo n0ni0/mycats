@@ -51,6 +51,7 @@ class Cat
      * @var integer
      *
      * @ORM\Column(name="age", type="integer", length=2)
+     * @Assert\Type(type="integer")
      */
     private $age;
 
@@ -301,4 +302,9 @@ class Cat
       $this->formPhoto->move($folder, $photoName);
       $this->setPhoto($photoName);
     }
+
+   public function __toString()
+   {
+    return $this->getBreed();
+   }
 }
