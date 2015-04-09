@@ -1,0 +1,22 @@
+easy_admin:
+  site_name: mycats Cpanel
+  entities:
+    Users: 
+      class: AppBundle\Entity\User
+      list:
+       fields: ['id', 'name', 'surname', 'email', 'password', 'startDate']
+    Cats:
+      class: AppBundle\Entity\Cat
+      list:
+        actions: ['delete']
+        fields:
+          - { property: 'id' }
+          - { property: 'name'}
+          - { property: 'breed'}
+          - { property: 'user'}
+          - { property: 'genre'}
+          - { property: 'age'}
+          - { property: 'photo', type:'image', base_path:'/bundles/app/images/' }
+          - { property: 'comments'}
+          - { property: 'revised', type: 'boolean' }
+    Breeds: AppBundle\Entity\Breed
