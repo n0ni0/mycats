@@ -1,0 +1,14 @@
+liip_imagine:
+    resolvers:
+       default:
+          web_path:
+            web_root: %kernel.root_dir%/../web
+            cache_prefix: media/cache
+
+    filter_sets:
+        cache: ~
+        my_thumb_list:
+            quality: 75
+            filters:
+              upscale: { min: [300, 600] }
+              thumbnail: { size: [600, 550], mode: outbound }

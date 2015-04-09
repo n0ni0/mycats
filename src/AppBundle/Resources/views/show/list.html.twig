@@ -12,7 +12,7 @@
         <td><strong>{{ "list.breed" | trans({}, 'messages') }}: </strong>{{ pagination.breed }}</td>
         <td><strong>{{ "list.genre" | trans({}, 'messages') }}: </strong>{{ pagination.genre }}</td>
         <td><strong>{{ "list.age" | trans({}, 'messages') }}: </strong>{{ pagination.age }}</td>
-        <td><img src="{{ asset('bundles/app/images/' ~ pagination.photo) }}" alt="" /></td>
+        <td><img src="{{ asset('bundles/app/images/' ~ pagination.photo) | imagine_filter('my_thumb_list')  }}" alt="" /></td>
         <td><strong>{{ "list.comment" | trans({}, 'messages') }}: </strong>{{ pagination.comments }}</td>
       </tr>
     {% endfor %}
