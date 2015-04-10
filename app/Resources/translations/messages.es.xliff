@@ -56,7 +56,7 @@
       </trans-unit>
       <trans-unit id="14">
         <source>flash.catCreated</source>
-        <target>Gato creado correctamente</target>
+        <target>Gato creado correctamente, será revisado por el administrador.</target>
       </trans-unit>
     </body>
   </file>

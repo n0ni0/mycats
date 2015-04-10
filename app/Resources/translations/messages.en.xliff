@@ -56,7 +56,7 @@
       </trans-unit>
       <trans-unit id="14">
         <source>flash.catCreated</source>
-        <target>Cat created correctly</target>
+        <target>Cat created correctly, will be reviewed by administrator</target>
       </trans-unit>
     </body>
   </file>
