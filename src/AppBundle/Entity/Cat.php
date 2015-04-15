@@ -51,7 +51,6 @@ class Cat
      * @var integer
      *
      * @ORM\Column(name="age", type="integer", length=2)
-     * @Assert\Type(type="integer")
      */
     private $age;
 
