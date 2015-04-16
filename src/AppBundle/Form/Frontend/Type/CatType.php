@@ -36,7 +36,7 @@ class CatType extends AbstractType
         'label'              => 'cat.comment',
         'translation_domain' => 'forms'
       ))
-      ->add('formPhoto', 'file', array(
+      ->add('formPhoto', 'file',array(
         'label'              => 'cat.photo',
         'translation_domain' => 'forms',
         'required'           => true

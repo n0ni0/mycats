@@ -13,6 +13,7 @@ use AppBundle\Entity\User;
 use AppBundle\Form\Frontend\Type\CatType;
 use AppBundle\myCatsEvents;
 
+
 class CatController extends Controller
 {
   public function newCatAction(Request $request)

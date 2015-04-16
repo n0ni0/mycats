@@ -14,5 +14,4 @@ class Util
 
     return $slug;
   }
-
 }
