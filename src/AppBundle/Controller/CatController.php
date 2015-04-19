@@ -24,23 +24,13 @@ class CatController extends Controller
 
     if($form->isValid()){
       $user = $this->get('security.context')->getToken()->getUser();
-      $cat->setUser($user);
-      $cat->uploadPhoto($this->container->getParameter(
-        'mycats.folder.images'));
-      $cat->setRevised(0);
-
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($cat);
-      $em->flush();
+      $this->get('CatManager')->prepareDates($cat, $user);
+      $this->get('CatManager')->saveCat($cat);
 
       $request->getSession()->getFlashBag()->add(
         'notice',
         $this->get('translator')->trans('flash.catCreated', array(), 'messages'
       ));
-
-      $event      = new GenericEvent();
-      $dispatcher = $this->get('event_dispatcher');
-      $dispatcher->dispatch(myCatsEvents::NEW_CAT_CREATED, $event);
 
       return $this->redirect($this->generateUrl('new'));
     }

@@ -88,4 +88,3 @@ knp_paginator:
 
 parameters:
   mycats.folder.images: %kernel.root_dir%/../web/bundles/app/images/
-  revised: 1

@@ -12,9 +12,17 @@ services:
     class:     AppBundle\Security\UserManager
     arguments: ["@security.encoder_factory"]
 
+  CatManager:
+    class:     AppBundle\Model\CatManager
+    arguments:
+      - @doctrine.orm.default_entity_manager
+      - @event_dispatcher
+      - @service_container
+
   email.new_cat:
     class:   AppBundle\EventListener\EmailListener
     arguments:
       - @mailer
     tags:
       - { name: kernel.event_listener, event: new.cat_created, method: onNewCatCreated }
+
