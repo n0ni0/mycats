@@ -62,7 +62,6 @@ class AccountController extends Controller
       ));
   }
 
-
   public function contactAction(Request $request)
   {
     $user = new User();
@@ -71,24 +70,13 @@ class AccountController extends Controller
 
     if($contactForm->isValid())
     {
-      $data    = $contactForm->getData();
-      $mailer  = $this->get('mailer');
-      $message = $mailer->createMessage()
-        ->setSubject('Formulario de contacto mycats')
-        ->setFrom('info@mycats.esy.es')
-        ->setTo(array('info@mycats.esy.es' => 'noreply@gmail.com'))
-        ->setBody($this->renderView('AppBundle:account:contactTemplate.html.twig',
-          array('name'    => $data['name'],
-                'mail'    => $data['mail'],
-                'content' => $data['content']
-          )
-        ));
+      $this->get('UserManager')->sendContact($contactForm);
+
       $request->getSession()->getFlashBag()->add(
         'notice',
         $this->get('translator')->trans('flash.contact', array(), 'messages'
       ));
 
-      $mailer->send($message);
       return $this->redirect($this->generateUrl('contact'));
     }
 

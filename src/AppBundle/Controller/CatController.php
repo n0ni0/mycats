@@ -6,13 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\SecurityContext;
-use Symfony\Component\EventDispatcher\EventDispatcher;
-use Symfony\Component\EventDispatcher\GenericEvent;
 use AppBundle\Entity\Cat;
 use AppBundle\Entity\User;
 use AppBundle\Form\Frontend\Type\CatType;
-use AppBundle\myCatsEvents;
-
 
 class CatController extends Controller
 {

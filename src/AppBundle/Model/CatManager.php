@@ -16,7 +16,6 @@ class CatManager
 {
   protected $dispatcher;
   protected $em;
-  protected $class;
   protected $container;
 
   public function __construct(EntityManager $em, EventDispatcherInterface $dispatcher, Container $container)
