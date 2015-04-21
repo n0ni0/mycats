@@ -34,12 +34,11 @@ class AccountController extends Controller
       $userEmail = $this->get('UserManager')->findUserEmail($form);
 
       if($userEmail !== null){
-          $form['email']->addError(new FormError('Email en uso'));
+        $form['email']->addError(new FormError('Email en uso'));
       }
-
       else{
-      $this->get('UserManager')->setUserPassword($user, $form);
-      $this->get('UserManager')->saveUser($user);
+        $this->get('UserManager')->setUserPassword($user, $form);
+        $this->get('UserManager')->saveUser($user);
 
       $request->getSession()->getFlashBag()->add(
         'notice',
@@ -92,13 +91,11 @@ class AccountController extends Controller
         $user->setPassword($originalPassword);
       }
       else{
-      $this->get('userManager')->setUserPassword($user,
-      $form->get('password')->getData());
+        $this->get('UserManager')->setUserPassword($user, $form);
+        $this->get('UserManager')->saveUser($user);
       }
 
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($user);
-      $em->flush();
+      $this->get('UserManager')->saveUser($user);
 
       $request->getSession()->getFlashBag()->add(
         'notice',
