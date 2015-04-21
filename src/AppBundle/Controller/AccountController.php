@@ -31,11 +31,9 @@ class AccountController extends Controller
     $form->handleRequest($request);
 
     if($form->isValid()){
-      $email = $form['email']->getData();
-      $em = $this->getDoctrine()->getManager();
-      $repo = $em->getRepository('AppBundle:User')->findOneByEmail($email);
+      $userEmail = $this->get('UserManager')->findUserEmail($form);
 
-      if($repo !== null){
+      if($userEmail !== null){
           $form['email']->addError(new FormError('Email en uso'));
       }
 

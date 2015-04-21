@@ -14,6 +14,7 @@ class UserManager
   protected $templating;
   protected $encoderFactory;
   protected $em;
+  protected $repo;
 
   public function __construct($mailer, EngineInterface $templating,
     EncoderFactoryInterface $encoderFactory, EntityManager $em)
@@ -22,6 +23,7 @@ class UserManager
     $this->templating     = $templating;
     $this->encoderFactory = $encoderFactory;
     $this->em             = $em;
+    $this->repo           = $em->getRepository('AppBundle:User');
   }
 
   public function sendContact($contactForm)
@@ -54,6 +56,12 @@ class UserManager
     if($flush){
       $this->em->flush();
     }
+  }
+
+  public function findUserEmail($form)
+  {
+    $email = $form->get('email')->getData();
+    return $this->repo->findOneBy(array('email' => $email));
   }
 
 }
