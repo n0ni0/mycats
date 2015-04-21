@@ -40,12 +40,8 @@ class AccountController extends Controller
       }
 
       else{
-      $this->get('userManager')->setUserPassword($user,
-      $form->get('password')->getData());
-
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($user);
-      $em->flush();
+      $this->get('UserManager')->setUserPassword($user, $form);
+      $this->get('UserManager')->saveUser($user);
 
       $request->getSession()->getFlashBag()->add(
         'notice',

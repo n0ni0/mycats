@@ -13,6 +13,8 @@ services:
     arguments:
       - @mailer
       - @templating
+      - @security.encoder_factory
+      - @doctrine.orm.default_entity_manager
 
   CatManager:
     class:     AppBundle\Model\CatManager
