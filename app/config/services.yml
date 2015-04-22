@@ -23,6 +23,11 @@ services:
       - @event_dispatcher
       - @service_container
 
+  BreedManager:
+    class: AppBundle\Model\BreedManager
+    arguments:
+      - @doctrine.orm.default_entity_manager
+
   email.new_cat:
     class:   AppBundle\EventListener\EmailListener
     arguments:

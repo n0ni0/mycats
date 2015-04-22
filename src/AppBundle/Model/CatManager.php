@@ -53,5 +53,10 @@ class CatManager
     return $this->repo->findAllCats();
   }
 
+  public function listBreed($breed)
+  {
+    return $this->repo->listBreed($breed);
+  }
+
 }
 

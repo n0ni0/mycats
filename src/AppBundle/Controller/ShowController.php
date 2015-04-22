@@ -31,9 +31,7 @@ class ShowController extends Controller
 
   public function listBreedAction($breed)
   {
-    $em  = $this->getDoctrine()->getEntityManager();
-    $cat = $em->getRepository('AppBundle:Cat')->listBreed($breed);
-
+    $cat = $this->get('CatManager')->listBreed($breed);
     if(!$cat){
       throw $this->createNotFoundException(
         'No hay ninguna mascota de esa raza'
@@ -59,9 +57,7 @@ class ShowController extends Controller
 
   public function selectBreedsAction()
   {
-    $em     = $this->getDoctrine()->getManager();
-    $breeds = $em->getRepository('AppBundle:Breed')->findBreedIfExistOne();
-
+    $breeds = $this->get('BreedManager')->findBreedIfExistOne();
     return $this->render('AppBundle:show:selectBreeds.html.twig', array(
       'breeds' => $breeds
     ));
