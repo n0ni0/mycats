@@ -10,9 +10,4 @@ final class myCatsEvents
    */
   const NEW_CAT_CREATED = "new.cat_created";
 
-  /**
-   * The CONTACT_SEND event occurs when a contact form is created
-   * This event send an email to the admin whit the contact form dates
-   */
-  const CONTACT_SEND = "contact_send";
 }

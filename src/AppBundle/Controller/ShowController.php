@@ -12,9 +12,7 @@ class ShowController extends Controller
 {
   public function listAction()
   {
-    $em  = $this->getDoctrine()->getEntityManager();
-    $cat = $em->getRepository('AppBundle:Cat')->findAllCats();
-
+    $cat = $this->get('CatManager')->findAllCats();
     if(!$cat){
       throw $this->createNotFoundException(
         'No se ha encontrado ningúna mascota'

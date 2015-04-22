@@ -9,6 +9,8 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 use AppBundle\Entity\Cat;
 use AppBundle\Entity\User;
+use AppBundle\Entity\CatRepository;
+use AppBundle\Entity\BreedRepository;
 use AppBundle\myCatsEvents;
 
 
@@ -17,12 +19,14 @@ class CatManager
   protected $dispatcher;
   protected $em;
   protected $container;
+  protected $repo;
 
   public function __construct(EntityManager $em, EventDispatcherInterface $dispatcher, Container $container)
   {
     $this->dispatcher = $dispatcher;
     $this->em         = $em;
     $this->container  = $container;
+    $this->repo       = $em->getRepository('AppBundle:Cat');
   }
 
   public function prepareDates(Cat $cat, $user)
@@ -40,8 +44,13 @@ class CatManager
       $this->em->flush();
     }
 
-    $event      = new GenericEvent();
+    $event = new GenericEvent();
     $this->dispatcher->dispatch(myCatsEvents::NEW_CAT_CREATED, $event);
+  }
+
+  public function findAllCats()
+  {
+    return $this->repo->findAllCats();
   }
 
 }
