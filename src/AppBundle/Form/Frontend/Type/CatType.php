@@ -28,7 +28,7 @@ class CatType extends AbstractType
         'class'              => 'AppBundle:Breed',
         'property'           => 'name',
       ))
-      ->add('age', 'text', array(
+      ->add('age', 'integer', array(
         'label'              => 'cat.age',
         'translation_domain' => 'forms'
       ))
