@@ -4,10 +4,33 @@
 
 {% block article %}
   <div class="content">
-    <h1>{{ "contact.article" | trans({}, 'forms') }}</h1>
-      <form action="{{ path('contact') }}" method="post" >
-        {{ form_widget(form) }}
-      </form>
+    <h2>{{ "contact.article" | trans({}, 'forms') }}</h2>
+
+    <fieldset>
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+        <legend></legend>
+          <div class="form">
+            {{ form_label(form.name) }}</br>
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.mail) }}</br>
+            {{ form_errors(form.mail) }}
+            {{ form_widget(form.mail) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.content) }}</br>
+            {{ form_errors(form.content) }}
+            {{ form_widget(form.content) }}
+          </div>
+
+    </br>{{ form_end(form) }}
+    </fieldset>
   </div>
 {% endblock %}
 

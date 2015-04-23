@@ -6,21 +6,46 @@
 {% block article %}
   <div class="content">
     <h2>{{ "profile.article" | trans({}, 'forms') }}</h2>
+
+    <fieldset>
     {{ form_start(form) }}
-    <div>
-      {{ form_errors(form) }}
-    </div>
-    <div>
-      <fieldset>
+    {{ form_errors(form) }}
+
         <legend>{{ "profile.leyend" | trans({}, 'forms') }}:</legend>
-         {{ form_row(form.name) }}
-         {{ form_row(form.surname) }}
-         {{ form_row(form.email) }}
-         <h3>{{ "profile.textPassword" | trans({}, 'forms') }}</h3>
-         {{ form_row(form.password) }}
-      </fieldset>
-    {{ form_end(form) }}
-    </div>
+          <div class="form">
+            {{ form_label(form.name) }}</br>
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.surname) }}</br>
+            {{ form_errors(form.surname) }}
+            {{ form_widget(form.surname) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.email) }}</br>
+            {{ form_errors(form.email) }}
+            {{ form_widget(form.email) }}
+          </div>
+
+          <h3>{{ "profile.textPassword" | trans({}, 'forms') }}</h3>
+
+          <div class="form">
+            {{ form_label(form.password.first) }}</br>
+            {{ form_errors(form.password.first) }}
+            {{ form_widget(form.password.first) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.password.second) }}</br>
+            {{ form_errors(form.password.second) }}
+            {{ form_widget(form.password.second) }}
+          </div>
+
+          </br>{{ form_end(form) }}
+    </fieldset>
   </div>
 {% endblock %}
 
