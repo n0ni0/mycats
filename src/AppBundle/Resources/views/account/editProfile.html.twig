@@ -3,15 +3,16 @@
 {% block title %}
   {{ "profile.title" | trans({}, 'forms') }}
 {% endblock %}
+
 {% block article %}
   <div class="content">
     <h2>{{ "profile.article" | trans({}, 'forms') }}</h2>
 
-    <fieldset>
     {{ form_start(form) }}
     {{ form_errors(form) }}
 
-        <legend>{{ "profile.leyend" | trans({}, 'forms') }}:</legend>
+    <fieldset>
+        <legend>{{ "profile.legend" | trans({}, 'forms') }}:</legend>
           <div class="form">
             {{ form_label(form.name) }}</br>
             {{ form_errors(form.name) }}

@@ -4,20 +4,54 @@
 {% block title %}
   {{ "cat.title" | trans({}, 'forms') }}
 {% endblock %}
+
 {% block article %}
   <div class="content">
-    <h2>{{ "cat.article" | trans({}, 'forms') }}</h2>
+    <h2>{{ "cat.title" | trans({}, 'forms') }}</h2>
+
     {{ form_start(form) }}
     {{ form_errors(form) }}
+
     <fieldset>
-      <legend>{{ "cat.legend" | trans({}, 'forms') }}:</legend>
-         {{ form_row(form.breed) }}
-         {{ form_row(form.name) }}
-         {{ form_row(form.genre) }}
-         {{ form_row(form.age) }}
-         {{ form_row(form.comments) }}
-         {{ form_row(form.formPhoto) }}
+        <legend>{{ "cat.legend" | trans({}, 'forms') }}:</legend>
+          <div class="form">
+            {{ form_label(form.breed) }}</br>
+            {{ form_errors(form.breed) }}
+            {{ form_widget(form.breed) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.name) }}</br>
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.genre) }}</br>
+            {{ form_errors(form.genre) }}
+            {{ form_widget(form.genre) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.age) }}</br>
+            {{ form_errors(form.age) }}
+            {{ form_widget(form.age) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.comments) }}</br>
+            {{ form_errors(form.comments) }}
+            {{ form_widget(form.comments) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.formPhoto) }}</br>
+            {{ form_errors(form.formPhoto) }}
+            {{ form_widget(form.formPhoto) }}
+          </div>
+
+          </br>{{ form_end(form) }}
     </fieldset>
-    {{ form_end(form) }}
   </div>
 {% endblock %}
+

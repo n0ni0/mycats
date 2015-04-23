@@ -39,7 +39,7 @@
         <target>Sign Up</target>
       </trans-unit>
       <trans-unit id="10">
-        <source>register.leyend</source>
+        <source>register.legend</source>
         <target>Personal dates</target>
       </trans-unit>
       <trans-unit id="11">
@@ -147,7 +147,7 @@
         <target>Edit my profile</target>
       </trans-unit>
       <trans-unit id="37">
-        <source>profile.leyend</source>
+        <source>profile.legend</source>
         <target>Personal dates</target>
       </trans-unit>
       <trans-unit id="38">

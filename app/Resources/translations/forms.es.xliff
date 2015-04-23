@@ -39,7 +39,7 @@
         <target>Regístrate</target>
       </trans-unit>
       <trans-unit id="10">
-        <source>register.leyend</source>
+        <source>register.legend</source>
         <target>Datos personales</target>
       </trans-unit>
       <trans-unit id="11">
@@ -147,7 +147,7 @@
         <target>Editar mi perfil</target>
       </trans-unit>
       <trans-unit id="37">
-        <source>profile.leyend</source>
+        <source>profile.legend</source>
         <target>Datos personales</target>
       </trans-unit>
       <trans-unit id="38">

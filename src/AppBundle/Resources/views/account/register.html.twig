@@ -7,15 +7,43 @@
 {% block article %}
   <div class="content">
     <h2>{{ "register.article" | trans({}, 'forms') }}</h2>
+
     {{ form_start(form) }}
     {{ form_errors(form) }}
+
     <fieldset>
-      <legend>{{ "register.leyend" | trans({}, 'forms') }}</legend>
-        {{ form_row(form.name) }}
-        {{ form_row(form.surname) }}
-        {{ form_row(form.email) }}
-        {{ form_row(form.password) }}
-    </fieldset>
+    <legend>{{ "register.legend" | trans({}, 'forms') }}</legend>
+          <div class="form">
+            {{ form_label(form.name) }}</br>
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.surname) }}</br>
+            {{ form_errors(form.surname) }}
+            {{ form_widget(form.surname) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.email) }}</br>
+            {{ form_errors(form.email) }}
+            {{ form_widget(form.email) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.password.first) }}</br>
+            {{ form_errors(form.password.first) }}
+            {{ form_widget(form.password.first) }}
+          </div>
+
+          <div class="form">
+            {{ form_label(form.password.second) }}</br>
+            {{ form_errors(form.password.second) }}
+            {{ form_widget(form.password.second) }}
+          </div>
+
     {{ form_end(form) }}
+    </fieldset>
   </div>
 {% endblock %}
