@@ -27,6 +27,10 @@
             <strong>{{ "new.cat" | trans({}, 'menus') }}</strong></a></li>
           <li>{{ render(controller('AppBundle:Show:selectBreeds')) }}</li>
         {% endif %}
+
+        {% if is_granted('ROLE_ADMIN') %}
+        <li><a href="{{ path('cpanel') }}">CPANEL</a></li>
+        {% endif %}
         </ul>
     </nav>
   </header>
