@@ -1,11 +1,14 @@
 easy_admin_bundle:
   resource: "@EasyAdminBundle/Controller/"
   type: annotation
-  prefix: /admin
+  prefix: /{_locale}/admin
+
+cpanel:
+  path:     /{_locale}/admin
 
 AppBundle:
   resource:     "@AppBundle/Resources/config/routing.yml"
-  prefix:       /{_locale}
+  prefix:       /front/{_locale}
   requirements:
     _locale:     es|en
   defaults:

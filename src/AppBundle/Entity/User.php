@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 /**
  * User
  *
@@ -78,6 +79,12 @@ class User implements UserInterface
      */
     private $startDate;
 
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="roles")
+     */
+    private $roles = array();
 
     /**
      * Get id
@@ -105,7 +112,7 @@ class User implements UserInterface
     /**
      * Get name
      *
-     * @return string 
+     * @return array
      */
     public function getName()
     {
@@ -204,14 +211,30 @@ class User implements UserInterface
         return $this->startDate;
     }
 
-    public function eraseCredentials()
+    /**
+     * Set roles
+     *
+     */
+    public function setRoles($roles)
     {
-    
+      $this->roles = $roles;
+
+      return $this;
     }
 
     public function getRoles()
     {
-      return array('ROLE_USER', 'ROLE_ADMIN');
+      $roles[] = $this->roles;
+      if(!$roles)
+      {
+        $roles[] = 'ROLE_USER';
+      }
+      return $roles;
+    }
+
+    public function eraseCredentials()
+    {
+    
     }
 
     public function getUsername()

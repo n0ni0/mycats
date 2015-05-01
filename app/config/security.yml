@@ -16,8 +16,8 @@ security:
 
     access_control:
      - { path: ^/(es|en)/(login|register|contact|privacy|_wdt), roles: IS_AUTHENTICATED_ANONYMOUSLY }
-     - { path: ^/(es|en)/*    , roles: ROLE_USER }
-     - { path:  ^/admin, roles: ROLE_ADMIN }
+     - { path: ^/(es|en)/front/    , roles: ROLE_USER }
+     - { path:  ^/(es|en)/admin, roles: ROLE_ADMIN }
 
     providers:
       users:

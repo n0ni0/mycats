@@ -40,6 +40,9 @@ class UserType extends AbstractType
        ->add('Register', 'submit', array(
          'label'              => 'register.submit',
          'translation_domain' => 'forms'
+       ))
+       ->add('roles', 'hidden', array(
+        'data' => 'ROLE_USER'
        ));
   }
 
