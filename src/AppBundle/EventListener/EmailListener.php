@@ -3,6 +3,7 @@
 namespace AppBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\GenericEvent;
+use AppBundle\Util\Constants;
 
 class EmailListener
 {
@@ -15,10 +16,11 @@ class EmailListener
 
   public function onNewCatCreated()
   {
+    $infoMail = Constants::INFO_MAIL;
     $message = \Swift_Message::newInstance()
       ->setSubject('mycats')
       ->setFrom('info@mycats.esy.es')
-      ->setTo('info@mycats.esy.es')
+      ->setTo($infoMail)
       ->setBody('Se ha creado un nuevo gato, revísalo');
 
     $this->mailer->send($message);
