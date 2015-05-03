@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use AppBundle\Entity\CatRepository;
 use AppBundle\Entity\BreedRepository;
+use AppBundle\Util\Constants;
 
 class ShowController extends Controller
 {
@@ -22,7 +23,7 @@ class ShowController extends Controller
     $paginator  = $this->get('knp_paginator');
     $pagination = $paginator->paginate(
       $cat,
-      $this->getRequest()->query->get('page', 1), 6);
+      $this->getRequest()->query->get('page', 1), $pages = Constants::NUM_PAGES);
 
     return $this->render('AppBundle:show:list.html.twig', compact(
       'pagination'
@@ -41,7 +42,7 @@ class ShowController extends Controller
     $paginator  = $this->get('knp_paginator');
     $pagination = $paginator->paginate(
       $cat,
-      $this->getRequest()->query->get('page', 1), 6);
+      $this->getRequest()->query->get('page', 1), $pages = Constants::NUM_PAGES);
 
     return $this->render('AppBundle:show:list.html.twig', array(
       'pagination' => $pagination

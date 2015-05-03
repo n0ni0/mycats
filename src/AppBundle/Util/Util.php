@@ -2,6 +2,7 @@
 
 namespace AppBundle\Util;
 
+
 class Util
 {
   static public function getSlug($string, $separator= '-')
