@@ -8,6 +8,8 @@ use Symfony\Component\Templating\EngineInterface;
 use AppBundle\Entity\User;
 use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use AppBundle\Util\Constants;
+
 class UserManager
 {
   protected $mailer;
@@ -28,11 +30,12 @@ class UserManager
 
   public function sendContact($contactForm)
   {
+      $infoMail = Constants::INFO_MAIL;
       $data    = $contactForm->getData();
       $message = $this->mailer->createMessage()
         ->setSubject('Formulario de contacto mycats')
-        ->setFrom('info@mycats.esy.es')
-        ->setTo(array('info@mycats.esy.es' => 'noreply@gmail.com'))
+        ->setFrom($infoMail)
+        ->setTo(array( $infoMail => 'noreply@gmail.com'))
         ->setBody($this->templating->render('AppBundle:account:contactTemplate.html.twig',
           array('name'    => $data['name'],
                 'mail'    => $data['mail'],

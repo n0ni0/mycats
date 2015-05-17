@@ -12,6 +12,6 @@ class Constants{
   /**
    * Info email
    */
-  const INFO_MAIL = 'info@mycats.esy.es';
+  const INFO_MAIL = 'mycats@antoniojimenezvelazquez.es';
 
 }
