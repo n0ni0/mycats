@@ -14,3 +14,4 @@
 /composer.lock
 /src/web/bundles/app/images
 /web/media/cache/
+/app/logs/*
