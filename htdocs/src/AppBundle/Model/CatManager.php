@@ -44,7 +44,7 @@ class CatManager
       $this->em->flush();
     }
 
-    $event = new GenericEvent();
+    $event = new GenericEvent($cat);
     $this->dispatcher->dispatch(myCatsEvents::NEW_CAT_CREATED, $event);
   }
 
