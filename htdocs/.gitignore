@@ -12,5 +12,5 @@
 /bin/
 /composer.phar
 /composer.lock
-/src/web/bundles/app/images
-/web/media/cache/
+/src/web/bundles/app/images/*
+/web/media/cache/*

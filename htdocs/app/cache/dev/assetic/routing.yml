@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: /var/www/html/mycats/app/config/routing_dev.yml
+    resource: /var/www/html/mycats/htdocs/app/config/routing_dev.yml
