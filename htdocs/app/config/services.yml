@@ -32,6 +32,7 @@ services:
     class:   AppBundle\EventListener\EmailListener
     arguments:
       - @mailer
+      - @templating
     tags:
       - { name: kernel.event_listener, event: new.cat_created, method: onNewCatCreated }
 
