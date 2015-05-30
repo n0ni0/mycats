@@ -30,4 +30,28 @@ class AccountControllerTest extends webTestCase
       array('front/en/register'),
     );
   }
+
+  /**
+   * @dataProvider linkProvider
+   */
+  public function testIfExistsHomeLinks($links)
+  {
+    $client  = self::createClient();
+    $crawler = $client->request('GET', '/front/es/login');
+    $link=$crawler
+      ->filter('a:contains('.$links.')')
+      ->eq(0)
+      ->link();
+    $crawler = $client->click($link);
+  }
+
+  public function linkProvider()
+  {
+    return array(
+      array('Contacto'),
+      array('Privacidad'),
+      array('mycats'),
+      array('Regístrate'),
+    );
+  }
 }
