@@ -21,13 +21,9 @@ class AccountControllerTest extends webTestCase
   {
     return array(
       array('/front/es/login'),
-      array('/front/en/login'),
       array('front/es/contact'),
-      array('front/en/contact'),
       array('front/es/privacy'),
-      array('front/en/privacy'),
       array('front/es/register'),
-      array('front/en/register'),
     );
   }
 
