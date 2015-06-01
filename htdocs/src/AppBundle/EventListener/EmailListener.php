@@ -19,7 +19,7 @@ class EmailListener
 
   public function onNewCatCreated(GenericEvent $event)
   {
-    $cat     = $event->getSubject();
+    $cat      = $event->getSubject();
     $infoMail = Constants::INFO_MAIL;
     $message  = \Swift_Message::newInstance()
       ->setSubject('mycats | nuevo gato creado')
@@ -27,7 +27,8 @@ class EmailListener
       ->setTo($infoMail)
       ->setBody($this->templating->render('AppBundle:email:newCatEmail.html.twig',
         array('cat' => $cat)
-      ));
+      ))
+      ->attach(\Swift_Attachment::fromPath('bundles/app/images/'.$cat->getPhoto()));
 
     $this->mailer->send($message);
   }
