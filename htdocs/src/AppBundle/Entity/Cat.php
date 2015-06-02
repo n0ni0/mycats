@@ -65,6 +65,7 @@ class Cat
      * @var string
      *
      * @ORM\Column(name="comments", type="text")
+     * @Assert\Length(min = 5, max = 1200)
      */
     private $comments;
 
