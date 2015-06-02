@@ -30,6 +30,24 @@
   display: block;
   margin: .5em 0 0 0;
   padding: .2em;
+}
+
+.listImage {
+  position: relative;
+}
+
+.listText {
+  position: relative;
+  padding: 2em;
+  width: 44%;
+  height: 478px;
+  float: left;
+  font-size: 18px;
+  background-color: #F0F0F0;
 
 }
 
+.navigation {
+  clear: left;
+  padding-bottom: 0.5em;
+}
